@@ -12,12 +12,13 @@ export const createComment = (postId: string, content: string, token?: string) =
     { headers: { Authorization: `Bearer ${token}` } }
   );
 
-export const toggleVote = (commentId: string, type: 'up' | 'down', token?: string) =>
+export const toggleVote = (commentId: string, token?: string) =>
   axios.post(
     `${API_URL}/votes`,
-    { commentId, type },
+    { commentId },
     { headers: { Authorization: `Bearer ${token}` } }
   );
+
 
 
 // Lấy vote của 1 comment
